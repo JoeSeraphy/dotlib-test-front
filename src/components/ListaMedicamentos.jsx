@@ -1,6 +1,10 @@
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 import React from "react";
 
 export default function ListaMedicamentos({ data, search }) {
+  data.sort((a, b) => a.published_at.localeCompare(b.published_at));
+
   return (
     <div>
       <section className="grid grid-cols-3 gap-4  my-4">
@@ -40,7 +44,9 @@ export default function ListaMedicamentos({ data, search }) {
                 </div>
                 <div className="border-t">
                   <span className="text-sm">Data de Publicação</span>
-                  <p className="text-base">{medicamento.published_at}</p>
+                  <p className="text-base">
+                    {format(medicamento.published_at, "P", { locale: ptBR })}
+                  </p>
                 </div>
               </div>
               <div className="bg-[#99B933] text-center py-3 flex  justify-center items-baseline align-bottom">
