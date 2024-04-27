@@ -1,14 +1,34 @@
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import React from "react";
+import React, { useState } from "react";
 
 export default function ListaMedicamentos({ data, search }) {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const recordsPerPage = 10;
+  const lastPage = currentPage * recordsPerPage;
+  const firstPage = lastPage - recordsPerPage;
+  const records = data.slice(firstPage, lastPage);
+  const theLastPage = 3;
+  const theFisrtPage = 1;
+
+  function prePage() {
+    if (currentPage !== firstPage) {
+      setCurrentPage(currentPage - 1);
+    }
+  }
+  function nextPage() {
+    if (currentPage !== lastPage) {
+      setCurrentPage(currentPage + 1);
+    }
+  }
+
   data.sort((a, b) => a.published_at.localeCompare(b.published_at));
 
   return (
     <div>
-      <section className="grid grid-cols-3 gap-4  my-4">
-        {data
+      <section className="grid grid-cols-3 gap-4  my-7">
+        {records
           .filter(
             (medicamento) =>
               medicamento.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -43,7 +63,7 @@ export default function ListaMedicamentos({ data, search }) {
                   <p className="text-base">{medicamento.documents[0].type}</p>
                 </div>
                 <div className="border-t">
-                  <span className="text-sm">Data de Publicação</span>
+                  <span className="text-sm">Data de Publicação:</span>
                   <p className="text-base">
                     {format(medicamento.published_at, "P", { locale: ptBR })}
                   </p>
@@ -57,6 +77,28 @@ export default function ListaMedicamentos({ data, search }) {
             </div>
           ))}
       </section>
+      <nav className="gris my-4">
+        <ul className="flex justify-between">
+          <li className={`${currentPage === theFisrtPage ? "hidden" : ""}`}>
+            <a
+              href="#"
+              className="bg-[#99B933] py-2 px-3 rounded-lg text-white text-xs"
+              onClick={prePage}
+            >
+              Anterior
+            </a>
+          </li>
+          <li className={`${currentPage === theLastPage ? "hidden" : ""}`}>
+            <a
+              href="#"
+              className="bg-[#99B933] py-2 px-3 rounded-lg text-white text-xs"
+              onClick={nextPage}
+            >
+              Próximo
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
