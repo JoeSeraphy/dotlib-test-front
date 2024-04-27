@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import React, { useState } from "react";
+const bula = "api/public/pdf_sample.pdf";
 
 export default function ListaMedicamentos({ data, search }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -70,7 +71,7 @@ export default function ListaMedicamentos({ data, search }) {
                 </div>
               </div>
               <div className="bg-[#99B933] text-center py-3 flex  justify-center items-baseline align-bottom">
-                <a href="#" target="_blank" className="text-white text-lg">
+                <a href={bula} target="_blank" className="text-white text-lg">
                   Bula
                 </a>
               </div>
@@ -78,11 +79,11 @@ export default function ListaMedicamentos({ data, search }) {
           ))}
       </section>
       <nav className="gris my-4">
-        <ul className="flex justify-between">
+        <ul className="flex justify-around">
           <li className={`${currentPage === theFisrtPage ? "hidden" : ""}`}>
             <a
               href="#"
-              className="bg-[#99B933] py-2 px-3 rounded-lg text-white text-xs"
+              className="bg-[#99B933] py-2 px-3 rounded-lg text-white text-sm"
               onClick={prePage}
             >
               Anterior
@@ -91,7 +92,7 @@ export default function ListaMedicamentos({ data, search }) {
           <li className={`${currentPage === theLastPage ? "hidden" : ""}`}>
             <a
               href="#"
-              className="bg-[#99B933] py-2 px-3 rounded-lg text-white text-xs"
+              className="bg-[#99B933] py-2 px-3 rounded-lg text-white text-sm"
               onClick={nextPage}
             >
               Próximo
