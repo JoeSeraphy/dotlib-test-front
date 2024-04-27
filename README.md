@@ -3,12 +3,12 @@
 <h1 aling="center">Dotlib Test Front end</h1
 
 <p>Test técnico para vaga de front-end jr</p>
-<p>o desafio consite em criar uma aplicação em react de um Bulario Eletrónico, consumido por uma FakeApi usando json-server, como finalidade de aprensentar uma lista e consultas bulas de medicamento.</p>
+<p>A tarefa é desenvolver uma aplicação em React para um Guia de Bulário Eletrônico, que se conecta a uma FakeAPI utilizando o json-server, com o objetivo de exibir uma lista e permitir consultas sobre bulas de medicamentos.</p>
 
 <p>
 A aplicação possuir uma consulta por nome do medicamento ou laboratório farmacêutico e apresentar os resultados em uma listagem </br>
-Possuir ordenação pela data de publicação do medicamento </br>
-Possuir uma paginação de 10 em 10 items por página </br>
+É ordenado por data de publicação do medicamento </br>
+Possuir uma paginação de dez em dez itens para cada página </br>
 E foi lido por meio de uma api REST disponibilizada</p>
 
 # Desktop
