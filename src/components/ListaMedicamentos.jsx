@@ -29,7 +29,7 @@ export default function ListaMedicamentos({ data, search }) {
 
   return (
     <div>
-      <section className="grid grid-cols-3 gap-4  my-7">
+      <section className="grid justify-center gap-4 my-7 lg:grid-cols-2 xl:grid-cols-3">
         {records
           .filter(
             (medicamento) =>
@@ -37,7 +37,10 @@ export default function ListaMedicamentos({ data, search }) {
               medicamento.company.toLowerCase().includes(search.toLowerCase())
           )
           .map((medicamento) => (
-            <div key={medicamento.id} className="w-96 shadow rounded-sm">
+            <div
+              key={medicamento.id}
+              className="w-96 mt-2 shadow rounded-sm lg:mx-auto"
+            >
               <div className="flex justify-between p-1 items-center">
                 <span>Medicamento</span>
                 <span className="text-sm bg-[#99B933] rounded-md p-1 text-white">
