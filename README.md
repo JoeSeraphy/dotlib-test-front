@@ -2,13 +2,13 @@
 
 <h1 aling="center">Dotlib Test Front end</h1
 
-<p>Test técnico para vaga de front-end jr</p>
+<p>Teste técnico para vaga de front-end jr</p>
 <p>A tarefa é desenvolver uma aplicação em React para um Guia de Bulário Eletrônico, que se conecta a uma FakeAPI utilizando o json-server, com o objetivo de exibir uma lista e permitir consultas sobre bulas de medicamentos.</p>
 
 <p>
-A aplicação possuir uma consulta por nome do medicamento ou laboratório farmacêutico e apresentar os resultados em uma listagem </br>
+A aplicação possui uma consulta por nome do medicamento ou laboratório farmacêutico e apresentar os resultados em uma listagem </br>
 É ordenado por data de publicação do medicamento </br>
-Possuir uma paginação de dez em dez itens para cada página </br>
+Possui uma paginação de dez em dez itens para cada página </br>
 E foi lido por meio de uma api REST disponibilizada</p>
 
 # Desktop
