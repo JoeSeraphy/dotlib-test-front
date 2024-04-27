@@ -1,3 +1,4 @@
+import { ArrowCircleLeft, ArrowCircleRight } from "@phosphor-icons/react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import React, { useState } from "react";
@@ -80,23 +81,25 @@ export default function ListaMedicamentos({ data, search }) {
       </section>
       <nav className="gris my-4">
         <ul className="flex justify-around">
-          <li className={`${currentPage === theFisrtPage ? "hidden" : ""}`}>
-            <a
-              href="#"
-              className="bg-[#99B933] py-2 px-3 rounded-lg text-white text-sm"
-              onClick={prePage}
-            >
+          <li
+            className={`${
+              currentPage === theFisrtPage ? "hidden" : ""
+            } flex items-center bg-[#99B933] py-2 px-3 rounded-lg text-white text-sm`}
+          >
+            <ArrowCircleLeft size={18} className="mr-2" />
+            <a href="#" onClick={prePage}>
               Anterior
             </a>
           </li>
-          <li className={`${currentPage === theLastPage ? "hidden" : ""}`}>
-            <a
-              href="#"
-              className="bg-[#99B933] py-2 px-3 rounded-lg text-white text-sm"
-              onClick={nextPage}
-            >
+          <li
+            className={`${
+              currentPage === theLastPage ? "hidden" : ""
+            } flex items-center bg-[#99B933] py-2 px-3 rounded-lg text-white text-sm`}
+          >
+            <a href="#" onClick={nextPage}>
               Próximo
             </a>
+            <ArrowCircleRight size={18} className="ml-2" />
           </li>
         </ul>
       </nav>
