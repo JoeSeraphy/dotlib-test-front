@@ -34,7 +34,7 @@ export default function ListaMedicamentos({ data, search }) {
           .filter(
             (medicamento) =>
               medicamento.name.toLowerCase().includes(search.toLowerCase()) ||
-              medicamento.company.toLowerCase().includes(search.toLowerCase())
+              medicamento.company.toLowerCase().includes(search.toLowerCase()),
           )
           .map((medicamento) => (
             <div
