@@ -39,7 +39,7 @@ export default function ListaMedicamentos({ data, search }) {
           })
           .map((medicamento) => (
             <div
-              key={`${medicamento.id} ${medicamento.documents[0].id}`}
+              key={medicamento.id}
               className="w-96 mt-2 shadow rounded-sm lg:mx-auto"
             >
               <div className="flex justify-between p-1 items-center">
@@ -48,7 +48,7 @@ export default function ListaMedicamentos({ data, search }) {
                   Nº: {medicamento.documents[0].expedient}
                 </span>
               </div>
-              <div className="">
+              <div>
                 <p className="text-center text-lg font-semibold text-zinc-900 px-1 py-9">
                   {medicamento.name}
                 </p>
@@ -66,17 +66,21 @@ export default function ListaMedicamentos({ data, search }) {
                 </div>
                 <div className="border-t">
                   <span className="text-sm">Uso:</span>
-                  <p className="text-base">{medicamento.documents[0].type}</p>
+                  <p className="text-base">{medicamento.documents[1].type}</p>
                 </div>
                 <div className="border-t">
-                  <span className="text-sm">Data de Publicação:</span>
+                  <span className="text-sm">medicamento de Publicação:</span>
                   <p className="text-base">
                     {format(medicamento.published_at, "P", { locale: ptBR })}
                   </p>
                 </div>
               </div>
-              <div className="bg-[#99B933] text-center py-3 flex  justify-center items-baseline align-bottom">
-                <a href={bula} target="_blank" className="text-white text-lg">
+              <div className="bg-[#99B933] text-center  flex  justify-center items-baseline align-bottom">
+                <a
+                  href={bula}
+                  target="_blanck"
+                  className="text-white text-lg py-3 px-4"
+                >
                   Bula
                 </a>
               </div>

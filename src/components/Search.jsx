@@ -1,7 +1,7 @@
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import React from "react";
 
-export default function Search({ value, onChange }) {
+export default function Search({ value, onChange, action }) {
   return (
     <div className="px-4 mt-4 lg:grid">
       <div className="flex">
@@ -11,7 +11,7 @@ export default function Search({ value, onChange }) {
       <form action="#">
         <input
           className="w-full outline-none p-2 border rounded-xl border-gray-400"
-          type="text"
+          type="search"
           placeholder="Pesquiser por medicamento ou laboratório"
           value={value}
           onChange={onChange}

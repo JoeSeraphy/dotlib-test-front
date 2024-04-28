@@ -34,6 +34,7 @@ Este Projeto foi desenvolvido usando seguintes tecnolias:
 - [phosphor icon](https://phosphoricons.com/)
 - [date-fns](https://date-fns.org/)
 - [Prettier](https://prettier.io/)
+- [Axios](https://axios-http.com/)
 
 ## 🚀 Getting started
 
