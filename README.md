@@ -33,6 +33,7 @@ Este Projeto foi desenvolvido usando seguintes tecnolias:
 - [Tailwind Css](https://tailwindcss.com)
 - [phosphor icon](https://phosphoricons.com/)
 - [date-fns](https://date-fns.org/)
+- [Prettier](https://prettier.io/)
 
 ## 🚀 Getting started
 
@@ -44,7 +45,7 @@ git clone
 cd dotlib-test-front
 ```
 
-Run this command to install the dependencies.
+Execute este comando para instalar as dependências.
 
 ```bash
 npm install
@@ -52,6 +53,20 @@ npm install
 npm run dev
 
 npm run backend
+```
+
+### Docker
+
+Para criar a imagem do Docker
+
+```bash
+docker build -t dotlib-test-frontend .
+```
+
+Para executar a imagem local
+
+```bash
+docker run -p 8080:8080 dotlib-test-frontend
 ```
 
 ## 🔖 Layout
