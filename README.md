@@ -73,4 +73,4 @@ docker run -p 8080:8080 dotlib-test-frontend
 
 Você pode visualiza os projetos pelos links abaixo:
 
-- [Live Preview]()
+- [Live Preview](https://dotlib-bula.vercel.app/)
