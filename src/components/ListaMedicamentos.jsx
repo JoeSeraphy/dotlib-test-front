@@ -1,7 +1,7 @@
 import { ArrowCircleLeft, ArrowCircleRight } from "@phosphor-icons/react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 const bula = "api/public/pdf_sample.pdf";
 
 export default function ListaMedicamentos({ data, search }) {
@@ -24,9 +24,7 @@ export default function ListaMedicamentos({ data, search }) {
       setCurrentPage(currentPage + 1);
     }
   }
-
   data.sort((a, b) => a.published_at.localeCompare(b.published_at));
-
   return (
     <div>
       <section className="grid justify-center gap-4 my-7 lg:grid-cols-2 xl:grid-cols-3">

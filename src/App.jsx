@@ -20,6 +20,8 @@ function App() {
         setData(data);
       })
       .catch((err) => console.loig(err));
+
+    data.sort((a, b) => a.published_at.localeCompare(b.published_at));
   }, []);
 
   return (
