@@ -9,7 +9,7 @@ function App() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/data", {
+    fetch("http://127.0.0.1:3000/data", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -20,8 +20,6 @@ function App() {
         setData(data);
       })
       .catch((err) => console.loig(err));
-
-    data.sort((a, b) => a.published_at.localeCompare(b.published_at));
   }, []);
 
   return (
