@@ -1,8 +1,8 @@
 import { ArrowCircleLeft, ArrowCircleRight } from "@phosphor-icons/react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import React, { useEffect, useState } from "react";
-const bula = "api/public/pdf_sample.pdf";
+import React, { useState } from "react";
+const bula = "json-server/api/public/pdf_sample.pdf";
 
 export default function ListaMedicamentos({ data, search }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -39,7 +39,7 @@ export default function ListaMedicamentos({ data, search }) {
           })
           .map((medicamento) => (
             <div
-              key={medicamento.id}
+              key={`${medicamento.id} ${medicamento.documents[0].id}`}
               className="w-96 mt-2 shadow rounded-sm lg:mx-auto"
             >
               <div className="flex justify-between p-1 items-center">

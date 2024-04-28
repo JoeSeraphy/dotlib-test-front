@@ -5,7 +5,7 @@ export default function Search({ value, onChange }) {
   return (
     <div className="px-4 mt-4 lg:grid">
       <div className="flex">
-        <p className="text-2xl text-zinc-700 pb-4">Pesquisar</p>
+        <p className="text-xl xl:text-2xl text-zinc-700 pb-4">Pesquisar</p>
         <MagnifyingGlass size={20} className="grid items-baseline ml-2 mt-1" />
       </div>
       <form action="#">

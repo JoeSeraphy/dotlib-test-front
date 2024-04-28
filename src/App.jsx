@@ -8,7 +8,7 @@ function App() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    fetch("http://127.0.0.1:3000/data", {
+    fetch(`http://127.0.0.1:3000/data`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -20,6 +20,7 @@ function App() {
       })
       .catch((err) => console.log(err));
   }, [sortDate()]);
+
   function sortDate() {
     return data.sort(
       (a, b) => new Date(a.published_at) - new Date(b.published_at),

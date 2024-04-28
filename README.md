@@ -60,7 +60,7 @@ npm run backend
 Para criar a imagem do Docker
 
 ```bash
-docker build -t dotlib-test-frontend .
+docker build -t dotlib-frontend .
 
 docker build -t dotlib-backend .
 ```
@@ -68,7 +68,7 @@ docker build -t dotlib-backend .
 Para executar a imagem local
 
 ```bash
-docker run -dp 127.0.0.1:8080:8080 dotlib-test-frontend
+docker run -dp 127.0.0.1:8080:8080 dotlib-frontend
 
 docker run -dp 127.0.0.1:3000:3000 dotlib-backend
 ```
