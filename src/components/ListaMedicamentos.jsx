@@ -1,7 +1,7 @@
 import { ArrowCircleLeft, ArrowCircleRight } from "@phosphor-icons/react";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 const bula = "api/public/pdf_sample.pdf";
 
 export default function ListaMedicamentos({ data, search }) {
@@ -25,7 +25,7 @@ export default function ListaMedicamentos({ data, search }) {
     }
   }
 
-  data.sort((a, b) => a.published_at.localeCompare(b.published_at));
+  data.sort((a, b) => a.published_at.localeComapre(b.published_at));
 
   return (
     <div>
