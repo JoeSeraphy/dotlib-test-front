@@ -25,8 +25,6 @@ export default function ListaMedicamentos({ data, search }) {
     }
   }
 
-  data.sort((a, b) => new Date(a.published_at) - new Date(b.published_at));
-
   return (
     <div>
       <section className="grid justify-center gap-4 my-7 lg:grid-cols-2 xl:grid-cols-3">

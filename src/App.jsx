@@ -20,6 +20,7 @@ function App() {
       })
       .catch((err) => console.log(err));
   }, []);
+  data.sort((a, b) => new Date(a.published_at) - new Date(b.published_at));
 
   return (
     <>
