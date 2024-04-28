@@ -7,7 +7,6 @@ import ListaMedicamentos from "./components/ListaMedicamentos";
 function App() {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
-
   useEffect(() => {
     fetch("http://127.0.0.1:3000/data", {
       method: "GET",
@@ -19,7 +18,7 @@ function App() {
       .then((data) => {
         setData(data);
       })
-      .catch((err) => console.loig(err));
+      .catch((err) => console.log(err));
   }, []);
 
   return (

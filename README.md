@@ -68,7 +68,7 @@ docker build -t dotlib-backend .
 Para executar a imagem local
 
 ```bash
-docker run -p 8080:8080 dotlib-test-frontend
+docker run -dp 127.0.0.1:8080:8080 dotlib-test-frontend
 
 docker run -dp 127.0.0.1:3000:3000 dotlib-backend
 ```

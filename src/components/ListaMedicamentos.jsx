@@ -25,17 +25,20 @@ export default function ListaMedicamentos({ data, search }) {
     }
   }
 
-  data.sort((a, b) => a.published_at.localeComapre(b.published_at));
+  data.sort((a, b) => new Date(a.published_at) - new Date(b.published_at));
 
   return (
     <div>
       <section className="grid justify-center gap-4 my-7 lg:grid-cols-2 xl:grid-cols-3">
         {records
-          .filter(
-            (medicamento) =>
-              medicamento.name.toLowerCase().includes(search.toLowerCase()) ||
-              medicamento.company.toLowerCase().includes(search.toLowerCase()),
-          )
+          .filter((medicamento) => {
+            return search.toLowerCase() === ""
+              ? medicamento
+              : medicamento.name.toLowerCase().includes(search) ||
+                  search.toLowerCase() === ""
+                ? medicamento
+                : medicamento.company.toLowerCase().includes(search);
+          })
           .map((medicamento) => (
             <div
               key={medicamento.id}
