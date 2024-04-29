@@ -61,12 +61,12 @@ export default function ListaMedicamentos({ data, search }) {
                 <div className="border-t">
                   <span className="text-sm">Ativos Principais:</span>
                   <p className="text-base">
-                    {medicamento.active_principles[0]?.name}
+                    {medicamento.active_principles[0].name}
                   </p>
                 </div>
                 <div className="border-t">
                   <span className="text-sm">Uso:</span>
-                  <p className="text-base">{medicamento?.documents[0]?.type}</p>
+                  <p className="text-base">{medicamento.documents[0].type}</p>
                 </div>
                 <div className="border-t">
                   <span className="text-sm">medicamento de Publicação:</span>
@@ -77,7 +77,8 @@ export default function ListaMedicamentos({ data, search }) {
               </div>
               <div className="bg-[#99B933] text-center  flex  justify-center items-baseline align-bottom">
                 <a
-                  href={bula}
+                  href={medicamento.documents[0].url}
+                  download={bula}
                   target="_blanck"
                   className="text-white text-lg py-3 px-6"
                 >
