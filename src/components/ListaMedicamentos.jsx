@@ -10,9 +10,9 @@ export default function ListaMedicamentos({ data, search }) {
   const recordsPerPage = 10;
   const lastPage = currentPage * recordsPerPage;
   const firstPage = lastPage - recordsPerPage;
-  const records = data.slice(firstPage, lastPage);
   const theLastPage = 3;
   const theFisrtPage = 1;
+  const records = data.slice(firstPage, lastPage);
 
   function prePage() {
     if (currentPage !== firstPage) {
@@ -29,14 +29,14 @@ export default function ListaMedicamentos({ data, search }) {
     <div>
       <section className="grid justify-center gap-4 my-7 lg:grid-cols-2 xl:grid-cols-3">
         {records
-          .filter((medicamento) => {
-            return search.toLowerCase() === ""
+          .filter((medicamento) =>
+            search.toLowerCase() === ""
               ? medicamento
               : medicamento.name.toLowerCase().includes(search) ||
                   search.toLowerCase() === ""
                 ? medicamento
-                : medicamento.company.toLowerCase().includes(search);
-          })
+                : medicamento.company.toLowerCase().includes(search),
+          )
           .map((medicamento) => (
             <div
               key={medicamento.id}
@@ -61,12 +61,12 @@ export default function ListaMedicamentos({ data, search }) {
                 <div className="border-t">
                   <span className="text-sm">Ativos Principais:</span>
                   <p className="text-base">
-                    {medicamento.active_principles[0].name}
+                    {medicamento.active_principles[0]?.name}
                   </p>
                 </div>
                 <div className="border-t">
                   <span className="text-sm">Uso:</span>
-                  <p className="text-base">{medicamento.documents[1].type}</p>
+                  <p className="text-base">{medicamento?.documents[0]?.type}</p>
                 </div>
                 <div className="border-t">
                   <span className="text-sm">medicamento de Publicação:</span>
@@ -79,7 +79,7 @@ export default function ListaMedicamentos({ data, search }) {
                 <a
                   href={bula}
                   target="_blanck"
-                  className="text-white text-lg py-3 px-4"
+                  className="text-white text-lg py-3 px-6"
                 >
                   Bula
                 </a>

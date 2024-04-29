@@ -63,6 +63,8 @@ Para criar a imagem do Docker
 ```bash
 docker build -t dotlib-frontend .
 
+cd json-sever
+
 docker build -t dotlib-backend .
 ```
 
